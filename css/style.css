@@ -2,7 +2,11 @@ body{
   margin: 0;
   padding: 0;
   background-color: #604685;
-  /* background-color: #8267a7; */
+  scroll-behavior: none;
+}
+
+body::-webkit-scrollbar{
+  display: none;
 }
 
 .container{
@@ -102,4 +106,13 @@ label{
   margin-left: 170px;
   font-size: 24px;
   color: rgb(255, 255, 255);
+}
+
+#list{
+  padding: 0;
+  margin-top: 40px;
+  color: rgb(255, 255, 255);
+}
+p{
+  padding: 5px 0;
 }
