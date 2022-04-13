@@ -36,7 +36,6 @@ convertCur.addEventListener("click", (b) => {
     usdDollarObj.value = y;
   }
 
-  var 
 
   if (EuroObj.value != "") {
     var z = EuroObj.value * 12300;
