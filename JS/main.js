@@ -1,4 +1,5 @@
 
+
 var usdDollarObj = document.querySelector("#USD");
 var EuroObj = document.querySelector("#EUR");
 var uzsSumObj = document.querySelector("#UZS");
@@ -7,6 +8,7 @@ var resetSite = document.querySelector("#reset");
 var convertCur = document.querySelector("#convert");
 var info = document.querySelector("#list");
 var curr = document.querySelector("#currency");
+var uzs = document.querySelector("#uzs");
 var curr1 = document.querySelector("#currency1");
 
 
@@ -34,10 +36,16 @@ convertCur.addEventListener("click", (b) => {
     usdDollarObj.value = y;
   }
 
+  var 
+
   if (EuroObj.value != "") {
     var z = EuroObj.value * 12300;
     console.log(z);
     uzsSumObj.value = z;
+
+    var j = EuroObj.value * 1.08;
+    console.log(j);
+    usdDollarObj.value = j;
   } else {
     var y = uzsSumObj.value / 12300;
     console.log(y);
@@ -48,9 +56,9 @@ convertCur.addEventListener("click", (b) => {
   var p2 = "";
   var p3 = "";
 
-  if (p1 == "" && p2 == "" && p3 == ""){
+  if (p1 == "" && p2 == "" && p3 == "") {
     var newLi = document.createElement("li");
-    
+
     var par1 = document.createElement("p");
     par1.textContent = `So'mda: ${uzsSumObj.value} so'm`;
 
@@ -66,27 +74,20 @@ convertCur.addEventListener("click", (b) => {
 
 })
 
+function randomIntFromInterval(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+var natija = curr.textContent;
+
+var natija1 = uzs.textContent;
+
 resetSite.addEventListener("click", (c) => {
   usdDollarObj.value = "";
   uzsSumObj.value = "";
   EuroObj.value = "";
 
-
-  // function randomIntFromInterval(min, max) {
-  //   return Math.floor(Math.random() * (max - min + 1) + min)
-  // }
-  
-  // var curResult = randomIntFromInterval(10000, 12000);
-  // var natija = document.createElement("span");
-  // natija.textContent = curResult;
-  // document.body.appendChild(natija);
-  // curr1.appendChild(natija)
-  // console.log(curResult);
-
-  
-  // var curResult = document.createElement("span");
-  // curResult.textContent = curr;
-  // document.body.appendChild(curr);
-
+  uzs.textContent = randomIntFromInterval(12000, 13000);
+  curr.textContent = randomIntFromInterval(10000, 12000);
 })
 
