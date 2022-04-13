@@ -1,5 +1,4 @@
 
-
 var usdDollarObj = document.querySelector("#USD");
 var EuroObj = document.querySelector("#EUR");
 var uzsSumObj = document.querySelector("#UZS");
@@ -27,26 +26,32 @@ var curr1 = document.querySelector("#currency1");
 
 convertCur.addEventListener("click", (b) => {
   if (usdDollarObj.value != "") {
-    var x = usdDollarObj.value * 11400;
+    var x = usdDollarObj.value * curr.textContent;
+    x = Math.abs(x);
     console.log(x);
     uzsSumObj.value = x;
   } else {
     var y = uzsSumObj.value / 11400;
+    y = Math.abs(y);
     console.log(y);
     usdDollarObj.value = y;
   }
 
+  
 
   if (EuroObj.value != "") {
-    var z = EuroObj.value * 12300;
+    var z = EuroObj.value * uzs.textContent;
+    z = Math.abs(z);
     console.log(z);
     uzsSumObj.value = z;
 
     var j = EuroObj.value * 1.08;
+    j = Math.abs(j);
     console.log(j);
     usdDollarObj.value = j;
   } else {
     var y = uzsSumObj.value / 12300;
+    y = Math.abs(y);
     console.log(y);
     EuroObj.value = y;
   }
